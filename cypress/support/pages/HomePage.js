@@ -6,11 +6,11 @@ class HomePage extends BasePage {
     }
 
     getDismissWelcomeBunnerButton() {
-        return cy.get('[aria-label="Close Welcome Banner"]');
+        return cy.get('[aria-label="Close Welcome Banner"]', { timeout: 5000 });
     }
 
     getDismissCookieButton() {
-        return cy.get('[aria-label="dismiss cookie message"]');
+        return cy.get('[aria-label="dismiss cookie message"]',  { timeout: 5000 });
     }
 
     closeWelcomeAndCookieBanners() {
