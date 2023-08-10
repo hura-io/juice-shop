@@ -8,4 +8,8 @@ export default class BasePage {
     getLoginButton() {
         return cy.get('#navbarLoginButton');
     }
+
+    getUserProfileButton() {
+        return cy.get('button[aria-label="Go to user profile"] span');
+    }
 }
