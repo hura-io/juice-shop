@@ -23,3 +23,24 @@ export function clearJuiceCookies() {
     cy.clearCookies();
     cy.reload();
 }
+
+export function findProductByName(productName) {
+    cy.get('mat-grid-list.mat-grid-list').then(page => {
+        if (page.find(`[alt="${productName}"]`).length > 0){
+            cy.get(`[alt="${productName}"]`).parentsUntil('mat-card').next().eq(1).click();
+        } else {
+            cy.get('[aria-label="Next page"]').click();
+            findProductByName(productName);
+        }
+    })
+}
+
+// export function findProductByName1(productName) {
+//     cy.get('body').then(body => {
+//         if (body.find(`.prdocutname[title="${productName}"]`).length > 0) {
+//             cy.get(`.prdocutname[title="${productName}"]`).click();
+//         } else {
+//             cy.contains('.pagination a', '>').click();
+//             findProductByName(productName);
+//         }
+// })

@@ -20,6 +20,7 @@ before(() => {
 describe("Login Positive cases", () => {
 
     it("Success login", () => {
+        loginPage.visit()
         homePage.closeWelcomeAndCookieBanners()
 
         cy.log("**Loginning. . .**");
@@ -48,6 +49,8 @@ describe("Login Positive cases", () => {
         cy.log("**Confirming changes. . .");
         forgotPasswordPage.getPasswordChangedMessage().should('contain', ' Your password was successfully changed. ');
 
+        loginPage.visit();
+        homePage.closeWelcomeAndCookieBanners;
         loginPage.loginViaUi(user);
     })
 

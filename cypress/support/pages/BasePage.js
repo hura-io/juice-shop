@@ -12,4 +12,14 @@ export default class BasePage {
     getUserProfileButton() {
         return cy.get('button[aria-label="Go to user profile"] span');
     }
+
+    setWelcomeAndCookiesMessageintoCookies(){
+        cy.setCookie('cookieconsent_status', 'dismiss');
+        cy.setCookie('welcomebanner_status', 'dismiss');
+        cy.reload();
+    }
+
+    getYourBasketButton() {
+        return cy.get('[routerlink="/basket"]');
+    }
 }

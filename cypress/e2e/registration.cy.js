@@ -30,6 +30,9 @@ describe('Registration positive cases', () => {
     cy.log('**Checking the successful registration. . .**');
     loginPage.getSuccessRegisterMessageText().should('be.visible').and('contain', "Registration completed successfully. You can now log in.");
 
+    cy.log("**Loginnig as created user. . .**")
+    loginPage.loginViaUi(user)
+
   })
 
   it("Registration attempt with the different password in the 'Reapet password' field ", () => {

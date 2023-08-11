@@ -35,8 +35,6 @@ class LoginPage extends BasePage{
     }
 
     loginViaUi(user) {
-        this.visit();
-
         cy.log("**Entering login data and confirm. . .**")
         this.getEmailInput(user.email);
         this.getPasswordInput().type(user.password);
