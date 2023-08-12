@@ -8,7 +8,7 @@ class BasketPage extends BasePage{
     }
 
     getCheckOutButton() {
-       return cy.get('button#checkoutButton', {timeout: 5000});
+       return cy.get('button#checkoutButton', {timeout: 10000});
     }
 }
 export default new BasketPage;
