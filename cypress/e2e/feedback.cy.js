@@ -19,7 +19,7 @@ before(() => {
 })
 
 describe("Contact Page", () => {
-    it("Fedback form test", () => {
+    it("Send feedback test", () => {
         let commentText = faker.lorem.sentence(5);
 
         cy.log("**Opening the Customer Feedback page. . .**")
