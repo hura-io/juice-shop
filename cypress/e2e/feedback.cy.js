@@ -28,7 +28,6 @@ describe("Contact Page", () => {
 
         cy.log("**Filling the Customer Feedback form. . .**")
         contactPage.getCommentTextArea().type(commentText);
-        // contactPage.getRatingSlider().invoke('attr', 'aria-valuetext', '5').trigger('change');
         contactPage.getSliderThump().click({force: true, timeout: 5000}).type('{rightArrow}{rightArrow}{rightArrow}{rightArrow}');
         contactPage.passTheCaptcha();
 
