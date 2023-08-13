@@ -85,7 +85,6 @@ describe ("Order tests", () => {
 
     it("Write a review for Item", ()=> {
         let reviewText = faker.lorem.lines(1);
-        // user.email = faker.internet.email();
         homePage.visit();
         
         cy.log("**Openning item's info. . .**")
