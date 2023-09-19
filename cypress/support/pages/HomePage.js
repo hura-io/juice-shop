@@ -19,6 +19,24 @@ class HomePage extends BasePage {
         this.getDismissCookieButton().click();
     }
 
+    getItem(itemName) {
+        return cy.get(`[alt="${itemName}"]`);
+    }
 
+    getReviewTextArea() {
+        return cy.get('[placeholder="What did you like or dislike?"]');
+    }
+
+    getReviewSubmitButton() {
+        return cy.get('button#submitButton', {timeout: 5000});
+    }
+
+    getReviewsPanel() {
+        return cy.get('span').contains('Reviews');
+    }
+
+    getLastReviewText(userEmail) {
+        return cy.get('cite').contains(userEmail).last().next();
+    }
 }
 export default new HomePage();

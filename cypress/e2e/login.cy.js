@@ -84,6 +84,7 @@ describe("Login Negative cases", () => {
         loginPage.visit();
         homePage.closeWelcomeAndCookieBanners();
 
+        cy.log("**Filling Login form. . .**");
         loginPage.getEmailInput(user.email, false)
         loginPage.getPasswordInput().type(user.password);
 

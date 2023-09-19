@@ -17,18 +17,18 @@ class PaymentShopPage extends BasePage{
     }
 
     getExpiryMonthSelect() {
-        return cy.get('#mat-input-18');
+        return cy.get('#mat-input-16');
     }
 
     getExpiryYearSelect() {
-        return cy.get('select#mat-input-19');
+        return cy.get('select#mat-input-17');
     }
 
-    fillCardDetaild(cardData) {
+    fillCardDetails(cardData) {
         this.fillInCardNameInput(cardData.name);
         this.getCardNumberInput().type(cardData.number);
-        this.getExpiryMonthSelect().select(cardData.expiryMonth);
-        this.getExpiryYearSelect().select(cardData.expiryYear);
+        this.getExpiryMonthSelect().select(cardData.expiryMonth.toString());
+        this.getExpiryYearSelect().select(cardData.expiryYear.toString());
         
     }
 

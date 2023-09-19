@@ -22,4 +22,16 @@ export default class BasePage {
     getYourBasketButton() {
         return cy.get('[routerlink="/basket"]');
     }
+
+    getOrderConfirmation() {
+        return cy.get('h1.confirmation');
+    }
+
+    getSideNavButton() {
+        return cy.get('[aria-label="Open Sidenav"]');
+    }
+
+    getCustomerFeedbackButton() {
+        return cy.get('[routerlink="/contact"]');
+    }
 }

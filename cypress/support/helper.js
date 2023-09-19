@@ -16,7 +16,7 @@ export function registration(user) {
     registerPage.chooseTheSecurityQuestion();
 
     cy.log('** Confirm registration. . .**');
-    registerPage.getRegisterButton().click();
+    registerPage.getRegisterButton().click({force: true});
 }
 
 export function clearJuiceCookies() {
@@ -35,12 +35,3 @@ export function findProductByName(productName) {
     })
 }
 
-// export function findProductByName1(productName) {
-//     cy.get('body').then(body => {
-//         if (body.find(`.prdocutname[title="${productName}"]`).length > 0) {
-//             cy.get(`.prdocutname[title="${productName}"]`).click();
-//         } else {
-//             cy.contains('.pagination a', '>').click();
-//             findProductByName(productName);
-//         }
-// })

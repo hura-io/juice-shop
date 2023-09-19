@@ -9,7 +9,7 @@ user.password = faker.internet.password();
 user.reapetPassword = user.password;
 user.answer = faker.string.alphanumeric({ length: { min: 5, max: 10 } })
 
-describe('Registration positive cases', () => {
+describe('Registration cases', () => {
 
   it('Succesfull registration', () => {
     homePage.visit();
